@@ -11,13 +11,13 @@ function Project(props) {
       <div className="content">
         <ul>
           <li>
-            <strong>Title:</strong> {props.title}
+            <strong>Title:</strong> {props.title} 
           </li>
           <li>
-            <strong>GitHub:</strong> {props.github}
+            <strong>GitHub:</strong><a href={props.github}> {props.github} </a>
           </li>
           <li>
-            <strong>Deployed:</strong> {props.deployed}
+            <strong>Deployed:</strong><a href={props.deployed}>{props.deployed}</a> 
           </li>
           <li>
             <strong>Description:</strong> {props.description}
