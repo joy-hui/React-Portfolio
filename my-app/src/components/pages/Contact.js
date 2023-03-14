@@ -1,35 +1,87 @@
-import React from 'react';
-import { Link, Route, Routes } from 'react-router-dom';
-import Learn from './Learn';
+import React from "react";
+import "/Users/huizhao/bootcamp/React-Portfolio/my-app/src/style.css";
+import { useState } from "react";
 
-function Contact(props) {
+const Contact = () => {
+  // Setting the component's initial state
+  const [formInput, setFormInput] = useState({
+    firstName: "",
+    lastName: "",
+  });
+
+  const handleInputChange = (e) => {
+    // Getting the value and name of the input which triggered the change
+    console.log(e.target);
+    const { name, value } = e.target;
+
+    // Updating the input's state
+    // It's important to make a copy of the existing form state using the spread operator (...) so you don't lose the data from previous input fields!
+    setFormInput({ ...formInput, [name]: value });
+  };
+
+  const handleFormSubmit = (event) => {
+    // Preventing the default behavior of the form submit (which is to refresh the page)
+    event.preventDefault();
+
+    // Alert the user their first and last name, then set `firstName` and `lastName` to empty strings using our state-setter function from useState, which clears the inputs
+    alert(`Thank you for you message, I will contact you soon.`);
+    setFormInput({
+      firstName: "",
+      lastName: "",
+    });
+  };
+  // Notice how each input has a `value`, `name`, and `onChange` prop
   return (
     <div>
-      <h1>Contact Page</h1>
-      <p>
-        Integer cursus bibendum sem non pretium. Vestibulum in aliquet sem, quis
-        molestie urna. Aliquam semper ultrices varius. Aliquam faucibus sit amet
-        magna a ultrices. Aenean pellentesque placerat lacus imperdiet
-        efficitur. In felis nisl, luctus non ante euismod, tincidunt bibendum
-        mi. In a molestie nisl, eu sodales diam. Nam tincidunt lacus quis magna
-        posuere, eget tristique dui dapibus. Maecenas fermentum elementum
-        faucibus. Quisque nec metus vestibulum, egestas massa eu, sollicitudin
-        ipsum. Nulla facilisi. Sed ut erat ligula. Nam tincidunt nunc in nibh
-        dictum ullamcorper. Class aptent taciti sociosqu ad litora torquent per
-        conubia nostra, per inceptos himenaeos. Etiam ornare rutrum felis at
-        rhoncus. Etiam vel condimentum magna, quis tempor nulla.
-      </p>
-      <Link to="learn" role="button" className="btn btn-link">
-        Learn More
-      </Link>
-      <Link to="contact" role="button" className="btn btn-link">
-        Learn Less
-      </Link>
-      <Routes>
-        <Route path="learn" element={<Learn />} />
-      </Routes>
+      <h1 className="title">Contact</h1>
+      <div className="row">
+        <div className="col-lg-6 mb-4">
+          <form className="form">
+            <p>You can contact me via the ways below.</p>
+            <div className="content">
+              <ul>
+                <li>
+                  <strong>Email:  <br></br>tongwandou432@gamil.com</strong> 
+                </li>
+                <br></br>
+                <li>
+                  <strong>GitHub: https://github.com/joy-hui <br></br></strong><a href="https://github.com/joy-hui">https://github.com/joy-hui</a>
+                </li>
+                <br></br>
+                <li>
+                  <strong>link: https://www.linkedin.com/feed/<br></br> </strong><a href="https://www.linkedin.com/feed/">https://www.linkedin.com/feed/</a> 
+                </li>
+                
+              </ul>
+            </div>
+          </form>
+        </div>
+        <div className="col-lg-6">
+          <form className="form">
+            <label htmlFor="name">Your name</label>
+            <input
+              
+              name="name"
+              onChange={handleInputChange}
+              type="text"
+              placeholder="name"
+            />
+            <label htmlFor="email">Your email</label>
+            <input
+              
+              name="email"
+              onChange={handleInputChange}
+              type="text"
+              placeholder="email"
+            />
+            <label htmlFor="message">Your message</label>
+            <textarea name="message" rows="5" required></textarea>
+            <button onClick={handleFormSubmit}>Submit</button>
+          </form>
+        </div>
+      </div>
     </div>
   );
-}
+};
 
 export default Contact;

@@ -1,19 +1,29 @@
 import React from "react";
+import { NavLink } from 'react-router-dom';
+import "/Users/huizhao/bootcamp/React-Portfolio/my-app/src/style.css";
+import photo from "../../images/图片1.png";
 
 function Home() {
   return (
     <div>
-      <h1>Home Page</h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque velit, lobortis ut magna
-        varius, blandit rhoncus sem. Morbi lacinia nisi ac dui fermentum, sed luctus urna tincidunt.
-        Etiam ut feugiat ex. Cras non risus mi. Curabitur mattis rutrum ipsum, ut aliquet urna
-        imperdiet ac. Sed nec nulla aliquam, bibendum odio eget, vestibulum tortor. Cras rutrum
-        ligula in tincidunt commodo. Morbi sit amet mollis orci, in tristique ex. Donec nec ornare
-        elit. Donec blandit est sed risus feugiat porttitor. Vestibulum molestie hendrerit massa non
-        consequat. Vestibulum vitae lorem tortor. In elementum ultricies tempus. Interdum et
-        malesuada fames ac ante ipsum primis in faucibus.
-      </p>
+      <div className="jumbotron jumbotron-fluid home">
+        <div className="container">
+          <img src={photo} className="img1"></img>
+          <h2 className="h2add">Hui Zhao</h2>
+          <br />
+          <h3 className="h2add">About Me</h3>
+          <p className="h2add">
+          I'm a learning the front-end web development in Birmingham in the UK.
+            <br />
+            If you have any question, please
+            <NavLink to="/contact" end className="text-warning">
+              contact me
+            </NavLink>
+            .
+          </p>
+     
+        </div>
+      </div>
     </div>
   );
 }
