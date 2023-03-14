@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/react-gh-pages/static/css/main.8d651cdc.css",
+    "main.js": "/react-gh-pages/static/js/main.4d8b8d2a.js",
+    "static/media/project3image.png": "/react-gh-pages/static/media/project3image.41513698f563887cb7f3.png",
+    "static/media/图片1.png": "/react-gh-pages/static/media/图片1.b3d7e3a2d431d5a85fb4.png",
+    "static/media/project6image.png": "/react-gh-pages/static/media/project6image.b7cf105e855ee21a30aa.png",
+    "static/media/project1image.png": "/react-gh-pages/static/media/project1image.8963af0a603d3679d18b.png",
+    "static/media/project2image.png": "/react-gh-pages/static/media/project2image.44e770bb9c84ced3e7aa.png",
+    "static/media/project4image.png": "/react-gh-pages/static/media/project4image.0ca6652d06b0ebb193f1.png",
+    "static/media/project5image.png": "/react-gh-pages/static/media/project5image.6234247495aad7bb02f1.png",
+    "index.html": "/react-gh-pages/index.html",
+    "main.8d651cdc.css.map": "/react-gh-pages/static/css/main.8d651cdc.css.map",
+    "main.4d8b8d2a.js.map": "/react-gh-pages/static/js/main.4d8b8d2a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8d651cdc.css",
+    "static/js/main.4d8b8d2a.js"
+  ]
+}
