@@ -7,12 +7,13 @@ const Contact = () => {
   const [formInput, setFormInput] = useState({
     firstName: "",
     lastName: "",
+    message:""
   });
 
   const handleInputChange = (e) => {
     // Getting the value and name of the input which triggered the change
     console.log(e.target);
-    const { name, value } = e.target;
+    const { name, value,message } = e.target;
 
     // Updating the input's state
     // It's important to make a copy of the existing form state using the spread operator (...) so you don't lose the data from previous input fields!
@@ -28,6 +29,7 @@ const Contact = () => {
     setFormInput({
       firstName: "",
       lastName: "",
+      message:""
     });
   };
   // Notice how each input has a `value`, `name`, and `onChange` prop
@@ -41,17 +43,28 @@ const Contact = () => {
             <div className="content">
               <ul>
                 <li>
-                  <strong>Email:  <br></br>tongwandou432@gamil.com</strong> 
+                  <strong>
+                    Email: <br></br>tongwandou432@gamil.com
+                  </strong>
                 </li>
                 <br></br>
                 <li>
-                  <strong>GitHub: https://github.com/joy-hui <br></br></strong><a href="https://github.com/joy-hui">https://github.com/joy-hui</a>
+                  <strong>
+                    GitHub: https://github.com/joy-hui <br></br>
+                  </strong>
+                  <a href="https://github.com/joy-hui">
+                    https://github.com/joy-hui
+                  </a>
                 </li>
                 <br></br>
                 <li>
-                  <strong>link: https://www.linkedin.com/feed/<br></br> </strong><a href="https://www.linkedin.com/feed/">https://www.linkedin.com/feed/</a> 
+                  <strong>
+                    link: https://www.linkedin.com/feed/<br></br>{" "}
+                  </strong>
+                  <a href="https://www.linkedin.com/feed/">
+                    https://www.linkedin.com/feed/
+                  </a>
                 </li>
-                
               </ul>
             </div>
           </form>
@@ -60,22 +73,26 @@ const Contact = () => {
           <form className="form">
             <label htmlFor="name">Your name</label>
             <input
-              
-              name="name"
+              value={formInput.firstName}
+              name="firstName"
               onChange={handleInputChange}
               type="text"
               placeholder="name"
             />
             <label htmlFor="email">Your email</label>
             <input
-              
-              name="email"
+              value={formInput.lastName}
+              name="lastName"
               onChange={handleInputChange}
               type="text"
               placeholder="email"
             />
             <label htmlFor="message">Your message</label>
-            <textarea name="message" rows="5" required></textarea>
+            <textarea value={formInput.message} name="message" 
+            onChange={handleInputChange}
+            type="text"
+            placeholder="message"
+            rows="5" required/>
             <button onClick={handleFormSubmit}>Submit</button>
           </form>
         </div>
